@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Estudos\\.NET\\P.O.C_Render_Video_ArrayBuffer\\WebApi_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj": {}
+    "C:\\Estudos\\.NET\\P.O.C_Render_Video\\Web_Api_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj": {}
   },
   "projects": {
-    "C:\\Estudos\\.NET\\P.O.C_Render_Video_ArrayBuffer\\WebApi_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj": {
+    "C:\\Estudos\\.NET\\P.O.C_Render_Video\\Web_Api_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Estudos\\.NET\\P.O.C_Render_Video_ArrayBuffer\\WebApi_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj",
+        "projectUniqueName": "C:\\Estudos\\.NET\\P.O.C_Render_Video\\Web_Api_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj",
         "projectName": "WebApi_Render_Video_Stream",
-        "projectPath": "C:\\Estudos\\.NET\\P.O.C_Render_Video_ArrayBuffer\\WebApi_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj",
+        "projectPath": "C:\\Estudos\\.NET\\P.O.C_Render_Video\\Web_Api_Render_Video_Stream\\WebApi_Render_Video_Stream.csproj",
         "packagesPath": "C:\\Users\\caique_neves\\.nuget\\packages\\",
-        "outputPath": "C:\\Estudos\\.NET\\P.O.C_Render_Video_ArrayBuffer\\WebApi_Render_Video_Stream\\obj\\",
+        "outputPath": "C:\\Estudos\\.NET\\P.O.C_Render_Video\\Web_Api_Render_Video_Stream\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\caique_neves\\AppData\\Roaming\\NuGet\\NuGet.Config",

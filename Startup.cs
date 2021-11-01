@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using WebApi_Render_Video_Stream.Service;
 
 namespace WebApi_Render_Video_Stream
@@ -23,7 +24,10 @@ namespace WebApi_Render_Video_Stream
             services.AddMvc();
             services.AddControllers();
             services.AddScoped<IRenderingVideoService, RenderingVideoService>();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Video Rendering Video", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +37,7 @@ namespace WebApi_Render_Video_Stream
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = "swagger";
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rendering Video");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Video Rendering Video");
             });
             
             if (env.IsDevelopment())

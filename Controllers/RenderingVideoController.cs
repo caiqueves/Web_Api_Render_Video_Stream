@@ -8,19 +8,21 @@ using WebApi_Render_Video_Stream.Service;
 namespace WebApi_Render_Video_Stream.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class RenderingVideoController : Controller
     {
         private readonly IRenderingVideoService _renderingVideoService;
 
+        string filepath = @"C:\Temp\Video\teste-grande-tempo.mp4"; //video file address
+
         public RenderingVideoController(IRenderingVideoService renderingVideoService) 
             => this._renderingVideoService = renderingVideoService;
 
+
+        // Return format of blob using arrayBuffer
         [HttpGet("blob")]
         public async Task GetVideoAndBlob()
         {
-            string filepath = @"C:\Users\caique_neves\Downloads\earth.mp4";
-            string filename = Path.GetFileName(filepath);
             Stream iStream = null;
             byte[] buffer = new Byte[4096];
             int length;
@@ -88,14 +90,19 @@ namespace WebApi_Render_Video_Stream.Controllers
             }
         }
     
-
+        // Return format of mp4 
         [HttpGet("mp4")]
         public IActionResult GetVideoAndMP4()
         {
-            var arrayOfVideo = _renderingVideoService.ByteFormatVideo();
-            return File(arrayOfVideo.ToArray(), "video/mp4", "videotest");
+            var arrayOfVideo = _renderingVideoService.ByteFormatVideo(filepath);
+
+            return File(arrayOfVideo.ToArray(), "video/mp4", "video");
         }
 
-
+        // Return format of stream
+        [HttpGet("stream")]
+        public IActionResult GetVideoAndStream()
+            => PhysicalFile(filepath, "application/octet-stream", enableRangeProcessing: true);
+        
     }
 }
